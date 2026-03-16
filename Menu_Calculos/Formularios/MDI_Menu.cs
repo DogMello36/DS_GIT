@@ -19,7 +19,7 @@ namespace Menu_Calculos.Formularios
 
         private void MDI_Menu_Load(object sender, EventArgs e)
         {
-
+            name.Text = DateTime.Now.ToString();
         }
 
         private void calculosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -66,7 +66,17 @@ namespace Menu_Calculos.Formularios
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            staHora.Text = DateTime.Now.ToString();
+            
+        }
+
+        private void toolStripStatusLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void name_Click(object sender, EventArgs e)
+        {
+          
         }
     }
 }

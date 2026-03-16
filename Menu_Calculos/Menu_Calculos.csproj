@@ -46,10 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Calc_bts.cs">
+    <Compile Include="Formularios\Calc_bts.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calc_bts.Designer.cs">
+    <Compile Include="Formularios\Calc_bts.Designer.cs">
       <DependentUpon>Calc_bts.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\MDI_Menu.cs">
@@ -60,7 +60,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Calc_bts.resx">
+    <EmbeddedResource Include="Formularios\Calc_bts.resx">
       <DependentUpon>Calc_bts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\MDI_Menu.resx">
