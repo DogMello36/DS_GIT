@@ -58,7 +58,7 @@ namespace Menu_Calculos.Formularios
         }
         private void comBotõesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-         
+            OpenChildForm<CALCULOS>(); // ChildForm é o tipo do formulário filho
         }
 
         private void MDI_Menu_FormClosing(object sender, FormClosingEventArgs e)
@@ -96,6 +96,11 @@ namespace Menu_Calculos.Formularios
         private void name_Click(object sender, EventArgs e)
         {
           
+        }
+
+        private void comRadioButtonsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenChildForm<CalcRadio>(); // ChildForm é o tipo do formulário filho
         }
     }
 }

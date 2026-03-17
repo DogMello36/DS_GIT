@@ -77,6 +77,7 @@
             this.resultado.TabIndex = 3;
             this.resultado.Text = "?";
             this.resultado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.resultado.Click += new System.EventHandler(this.resultado_Click);
             // 
             // btnnLimpar
             // 
@@ -110,7 +111,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(80, 64);
+            this.textBox1.Location = new System.Drawing.Point(80, 65);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 29);
             this.textBox1.TabIndex = 8;

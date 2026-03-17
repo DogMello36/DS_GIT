@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formularios\CalcRadio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\CalcRadio.Designer.cs">
+      <DependentUpon>CalcRadio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Calc_bts.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\CalcRadio.resx">
+      <DependentUpon>CalcRadio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Calc_bts.resx">
       <DependentUpon>Calc_bts.cs</DependentUpon>
     </EmbeddedResource>

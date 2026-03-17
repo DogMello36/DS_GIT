@@ -60,17 +60,17 @@
             this.salvarToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.imprimirToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.recortarToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.copiarToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.colarToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.recortarToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.ajudaToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.Mensagem = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.staHora = new System.Windows.Forms.Timer(this.components);
             this.name = new System.Windows.Forms.ToolStripStatusLabel();
+            this.staHora = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -86,7 +86,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.menuStrip1.Size = new System.Drawing.Size(876, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1206, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -118,6 +118,7 @@
             this.comRadioButtonsToolStripMenuItem.Name = "comRadioButtonsToolStripMenuItem";
             this.comRadioButtonsToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.comRadioButtonsToolStripMenuItem.Text = "Com Radio buttons";
+            this.comRadioButtonsToolStripMenuItem.Click += new System.EventHandler(this.comRadioButtonsToolStripMenuItem_Click);
             // 
             // visorUnicoToolStripMenuItem1
             // 
@@ -218,7 +219,7 @@
             this.ajudaToolStripButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(876, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(1206, 31);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -323,15 +324,6 @@
             this.toolStripSeparator.Name = "toolStripSeparator";
             this.toolStripSeparator.Size = new System.Drawing.Size(6, 31);
             // 
-            // recortarToolStripButton
-            // 
-            this.recortarToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.recortarToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("recortarToolStripButton.Image")));
-            this.recortarToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.recortarToolStripButton.Name = "recortarToolStripButton";
-            this.recortarToolStripButton.Size = new System.Drawing.Size(28, 28);
-            this.recortarToolStripButton.Text = "Recor&tar";
-            // 
             // copiarToolStripButton
             // 
             this.copiarToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -349,6 +341,15 @@
             this.colarToolStripButton.Name = "colarToolStripButton";
             this.colarToolStripButton.Size = new System.Drawing.Size(28, 28);
             this.colarToolStripButton.Text = "C&olar";
+            // 
+            // recortarToolStripButton
+            // 
+            this.recortarToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.recortarToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("recortarToolStripButton.Image")));
+            this.recortarToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.recortarToolStripButton.Name = "recortarToolStripButton";
+            this.recortarToolStripButton.Size = new System.Drawing.Size(28, 28);
+            this.recortarToolStripButton.Text = "Recor&tar";
             // 
             // toolStripSeparator2
             // 
@@ -372,10 +373,10 @@
             this.Mensagem,
             this.toolStripStatusLabel3,
             this.name});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 441);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 698);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 9, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(876, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1206, 22);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -399,12 +400,6 @@
             this.toolStripStatusLabel3.Size = new System.Drawing.Size(70, 17);
             this.toolStripStatusLabel3.Text = "Data e hora:";
             // 
-            // staHora
-            // 
-            this.staHora.Enabled = true;
-            this.staHora.Interval = 1000;
-            this.staHora.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // name
             // 
             this.name.Name = "name";
@@ -412,11 +407,17 @@
             this.name.Text = "toolStripStatusLabel2";
             this.name.Click += new System.EventHandler(this.MDI_Menu_Load);
             // 
+            // staHora
+            // 
+            this.staHora.Enabled = true;
+            this.staHora.Interval = 1000;
+            this.staHora.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // MDI_Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(876, 463);
+            this.ClientSize = new System.Drawing.Size(1206, 720);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);

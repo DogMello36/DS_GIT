@@ -170,5 +170,15 @@ namespace Menu_Calculos
             }
 
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void resultado_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
