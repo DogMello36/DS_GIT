@@ -12,6 +12,12 @@ namespace Menu_Calculos
 {
     public partial class Calc_VISOR : Form
     {
+        decimal vNumAnt;
+        string vOperação;
+        bool vlimparVisor;
+
+        
+
         public Calc_VISOR()
         {
             InitializeComponent();
@@ -20,12 +26,20 @@ namespace Menu_Calculos
         private void Digitos(object sender, EventArgs e)
         {
             string digito = ((Button)sender). Text ;
-            if (LblVisor.Text == "0")
+            if (LblVisor.Text == "0" || vlimparVisor)
             {
                 LblVisor.Text = "";
+                vlimparVisor = false;
             }
             LblVisor.Text += digito;
 
+        }
+
+        private void operaçoes(object sender, EventArgs e)
+        {
+            vNumAnt = decimal.Parse(LblVisor.Text);
+            vOperação = ((Button)sender).Text;
+            vlimparVisor = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -70,7 +84,24 @@ namespace Menu_Calculos
 
         private void button6_Click_1(object sender, EventArgs e)
         {
+            decimal vNumAtual = decimal.Parse(LblVisor.Text);
 
+            switch (vOperação)
+            {
+                case "+":
+                    LblVisor.Text = (vNumAnt + vNumAtual).ToString();
+                break;
+
+                case "-":
+                    LblVisor.Text = (vNumAnt - vNumAtual).ToString();
+                break;
+
+                case "/":
+                    LblVisor.Text = (vNumAnt / vNumAtual).ToString();
+                break;
+
+                
+            }
         }
 
         private void button5_Click_1(object sender, EventArgs e)
@@ -96,6 +127,27 @@ namespace Menu_Calculos
         private void button19_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnVirgula_Click(object sender, EventArgs e)
+        {
+            if (!LblVisor.Text.Contains(","))
+            {
+                LblVisor.Text = ",";
+            }
+            
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            vNumAnt = 0;
+            LblVisor.Text = "0";
+        }
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            LblVisor.Text = LblVisor.Text.Substring(0,LblVisor.Text.Length - 1);
+            if (LblVisor.Text == "0") LblVisor.Text = "";
+           
         }
     }
 }
