@@ -33,6 +33,8 @@ namespace Menu_Calculos
             }
             LblVisor.Text += digito;
 
+            this.ActiveControl = null;
+
         }
 
         private void operaçoes(object sender, EventArgs e)
@@ -40,6 +42,8 @@ namespace Menu_Calculos
             vNumAnt = decimal.Parse(LblVisor.Text);
             vOperação = ((Button)sender).Text;
             vlimparVisor = true;
+            lblHist.Text = ""; 
+            lblHist.Text = vNumAnt + " " + vOperação + " ";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -99,9 +103,8 @@ namespace Menu_Calculos
                 case "/":
                     LblVisor.Text = (vNumAnt / vNumAtual).ToString();
                 break;
-
-                
             }
+            lblHist.Text += vNumAtual + " =";
         }
 
         private void button5_Click_1(object sender, EventArgs e)
@@ -148,6 +151,26 @@ namespace Menu_Calculos
             LblVisor.Text = LblVisor.Text.Substring(0,LblVisor.Text.Length - 1);
             if (LblVisor.Text == "0") LblVisor.Text = "";
            
+        }
+
+        private void Calc_VISOR_KeyDown(object sender, KeyEventArgs e)
+        {
+            label1.Text = e.KeyCode.ToString();
+            Button botao = new Button();
+            if (e.KeyCode == Keys.Escape)
+            {
+                Close();
+            }
+            if (e.KeyCode >= Keys.NumPad0  &&  e.KeyCode <= Keys.NumPad9) 
+            {
+                botao.Text = e.KeyCode.ToString().Substring(6);
+                Digitos(botao, e);
+            }
+        }
+
+        private void lblHist_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

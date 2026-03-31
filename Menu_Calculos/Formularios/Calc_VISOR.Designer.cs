@@ -52,6 +52,8 @@
             this.btnMulti = new System.Windows.Forms.Button();
             this.btnMais = new System.Windows.Forms.Button();
             this.btnMenos = new System.Windows.Forms.Button();
+            this.lblHist = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -60,9 +62,9 @@
             // 
             this.LblVisor.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.LblVisor.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblVisor.Location = new System.Drawing.Point(12, 29);
+            this.LblVisor.Location = new System.Drawing.Point(6, 27);
             this.LblVisor.Name = "LblVisor";
-            this.LblVisor.Size = new System.Drawing.Size(415, 99);
+            this.LblVisor.Size = new System.Drawing.Size(415, 70);
             this.LblVisor.TabIndex = 20;
             this.LblVisor.Text = "0";
             this.LblVisor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -332,21 +334,45 @@
             this.btnMenos.UseVisualStyleBackColor = true;
             this.btnMenos.Click += new System.EventHandler(this.operaçoes);
             // 
+            // lblHist
+            // 
+            this.lblHist.Location = new System.Drawing.Point(6, 9);
+            this.lblHist.Name = "lblHist";
+            this.lblHist.Size = new System.Drawing.Size(415, 33);
+            this.lblHist.TabIndex = 23;
+            this.lblHist.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblHist.Click += new System.EventHandler(this.lblHist_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(21, 107);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 20);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "label1";
+            // 
             // Calc_VISOR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(439, 572);
+            this.ControlBox = false;
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblHist);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.LblVisor);
+            this.KeyPreview = true;
             this.Name = "Calc_VISOR";
             this.Text = "Calc_VISOR";
             this.Click += new System.EventHandler(this.Digitos);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Calc_VISOR_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -375,5 +401,7 @@
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button button20;
         private System.Windows.Forms.Button btnLimpar;
+        private System.Windows.Forms.Label lblHist;
+        private System.Windows.Forms.Label label1;
     }
 }
