@@ -103,6 +103,9 @@ namespace Menu_Calculos
                 case "/":
                     LblVisor.Text = (vNumAnt / vNumAtual).ToString();
                 break;
+                case "^":
+                    LblVisor.Text = (Math.Pow((double)vNumAnt, (double)vNumAtual)).ToString();
+                    break;
             }
             lblHist.Text += vNumAtual + " =";
         }
@@ -164,6 +167,58 @@ namespace Menu_Calculos
             if (e.KeyCode >= Keys.NumPad0  &&  e.KeyCode <= Keys.NumPad9) 
             {
                 botao.Text = e.KeyCode.ToString().Substring(6);
+                foreach (Control item in panel1.Controls)
+                {
+                    if (((Button)item).Text == botao.Text)
+                    {
+                        item.BackColor = Color.Black;
+                    }
+                    
+                }
+                
+                Digitos(botao, e);
+            }
+            switch (e.KeyCode)
+            {
+                case Keys.Add:
+                    botao.Text = "+";
+                    operaçoes(botao, e);
+                    break;
+                case Keys.Subtract:
+                    botao.Text = "-";
+                    operaçoes(botao, e);
+                    break;
+                case Keys.Divide:
+                    botao.Text = "/";
+                    operaçoes(botao, e);
+                    break;
+                case Keys.Multiply:
+                    botao.Text = "*";
+                    operaçoes(botao, e);
+                    break;
+                case Keys.Return:
+                    button6_Click_1(botao, e);
+                    break;
+            }
+
+            this.KeyPreview = true;
+        }
+        private void Calc_VISOR_KeyUp(object sender, KeyEventArgs e)
+        {
+            label1.Text = e.KeyCode.ToString();
+            Button botao = new Button();
+            if (e.KeyCode >= Keys.NumPad0 && e.KeyCode <= Keys.NumPad9)
+            {
+                botao.Text = e.KeyCode.ToString().Substring(6);
+                foreach (Control item in panel1.Controls)
+                {
+                    if (((Button)item).Text == botao.Text)
+                    {
+                        item.BackColor = Color.White;
+                    }
+
+                }
+
                 Digitos(botao, e);
             }
         }
