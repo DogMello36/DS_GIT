@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Github_csharp.Formulários;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -132,7 +133,7 @@ namespace Menu_Calculos.Formularios
 
         private void visorUnicoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            OpenChildForm<Calc_VISOR>();
+            OpenChildForm<CalcDeVdd>();
         }
     }
 }

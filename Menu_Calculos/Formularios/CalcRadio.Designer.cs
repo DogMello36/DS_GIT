@@ -1,4 +1,4 @@
-﻿namespace Menu_Calculos
+﻿namespace Github_csharp.Formulários
 {
     partial class CalcRadio
     {
@@ -28,188 +28,178 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.soma = new System.Windows.Forms.RadioButton();
-            this.sub = new System.Windows.Forms.RadioButton();
-            this.div = new System.Windows.Forms.RadioButton();
-            this.mult = new System.Windows.Forms.RadioButton();
-            this.comp = new System.Windows.Forms.RadioButton();
-            this.parimpar = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.RadBSubtrair = new System.Windows.Forms.RadioButton();
+            this.RadBMultiplicar = new System.Windows.Forms.RadioButton();
+            this.RadBDividir = new System.Windows.Forms.RadioButton();
+            this.RadBSomar = new System.Windows.Forms.RadioButton();
+            this.txtBox1 = new System.Windows.Forms.TextBox();
+            this.txtBox2 = new System.Windows.Forms.TextBox();
+            this.lbl_alg = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.resultado = new System.Windows.Forms.Label();
+            this.lbl_res = new System.Windows.Forms.Label();
+            this.btnCalcular = new System.Windows.Forms.Button();
+            this.btnLimpar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.calcular = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // soma
+            // groupBox1
             // 
-            this.soma.AutoSize = true;
-            this.soma.Location = new System.Drawing.Point(60, 82);
-            this.soma.Name = "soma";
-            this.soma.Size = new System.Drawing.Size(31, 17);
-            this.soma.TabIndex = 0;
-            this.soma.TabStop = true;
-            this.soma.Text = "+";
-            this.soma.UseVisualStyleBackColor = true;
-            this.soma.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.groupBox1.Controls.Add(this.RadBSubtrair);
+            this.groupBox1.Controls.Add(this.RadBMultiplicar);
+            this.groupBox1.Controls.Add(this.RadBDividir);
+            this.groupBox1.Controls.Add(this.RadBSomar);
+            this.groupBox1.Location = new System.Drawing.Point(38, 27);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(202, 202);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Operações";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // sub
+            // RadBSubtrair
             // 
-            this.sub.AutoSize = true;
-            this.sub.Location = new System.Drawing.Point(60, 105);
-            this.sub.Name = "sub";
-            this.sub.Size = new System.Drawing.Size(28, 17);
-            this.sub.TabIndex = 1;
-            this.sub.TabStop = true;
-            this.sub.Text = "-";
-            this.sub.UseVisualStyleBackColor = true;
-            this.sub.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            this.RadBSubtrair.AutoSize = true;
+            this.RadBSubtrair.Location = new System.Drawing.Point(34, 76);
+            this.RadBSubtrair.Name = "RadBSubtrair";
+            this.RadBSubtrair.Size = new System.Drawing.Size(90, 24);
+            this.RadBSubtrair.TabIndex = 3;
+            this.RadBSubtrair.TabStop = true;
+            this.RadBSubtrair.Text = "Subtrair";
+            this.RadBSubtrair.UseVisualStyleBackColor = true;
+            this.RadBSubtrair.CheckedChanged += new System.EventHandler(this.RadBSubtrair_CheckedChanged);
             // 
-            // div
+            // RadBMultiplicar
             // 
-            this.div.AutoSize = true;
-            this.div.Location = new System.Drawing.Point(60, 128);
-            this.div.Name = "div";
-            this.div.Size = new System.Drawing.Size(30, 17);
-            this.div.TabIndex = 2;
-            this.div.TabStop = true;
-            this.div.Text = "/";
-            this.div.UseVisualStyleBackColor = true;
-            this.div.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+            this.RadBMultiplicar.AutoSize = true;
+            this.RadBMultiplicar.Location = new System.Drawing.Point(34, 106);
+            this.RadBMultiplicar.Name = "RadBMultiplicar";
+            this.RadBMultiplicar.Size = new System.Drawing.Size(104, 24);
+            this.RadBMultiplicar.TabIndex = 2;
+            this.RadBMultiplicar.TabStop = true;
+            this.RadBMultiplicar.Text = "Multiplicar";
+            this.RadBMultiplicar.UseVisualStyleBackColor = true;
+            this.RadBMultiplicar.CheckedChanged += new System.EventHandler(this.RadBMultiplicar_CheckedChanged);
             // 
-            // mult
+            // RadBDividir
             // 
-            this.mult.AutoSize = true;
-            this.mult.Location = new System.Drawing.Point(60, 151);
-            this.mult.Name = "mult";
-            this.mult.Size = new System.Drawing.Size(30, 17);
-            this.mult.TabIndex = 3;
-            this.mult.TabStop = true;
-            this.mult.Text = "x";
-            this.mult.UseVisualStyleBackColor = true;
-            this.mult.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
+            this.RadBDividir.AutoSize = true;
+            this.RadBDividir.Location = new System.Drawing.Point(34, 136);
+            this.RadBDividir.Name = "RadBDividir";
+            this.RadBDividir.Size = new System.Drawing.Size(76, 24);
+            this.RadBDividir.TabIndex = 1;
+            this.RadBDividir.TabStop = true;
+            this.RadBDividir.Text = "Dividir";
+            this.RadBDividir.UseVisualStyleBackColor = true;
+            this.RadBDividir.CheckedChanged += new System.EventHandler(this.RadBDividir_CheckedChanged);
             // 
-            // comp
+            // RadBSomar
             // 
-            this.comp.AutoSize = true;
-            this.comp.Location = new System.Drawing.Point(60, 227);
-            this.comp.Name = "comp";
-            this.comp.Size = new System.Drawing.Size(70, 17);
-            this.comp.TabIndex = 4;
-            this.comp.TabStop = true;
-            this.comp.Text = "Comparar";
-            this.comp.UseVisualStyleBackColor = true;
-            this.comp.CheckedChanged += new System.EventHandler(this.radioButton5_CheckedChanged);
+            this.RadBSomar.AutoSize = true;
+            this.RadBSomar.Location = new System.Drawing.Point(34, 46);
+            this.RadBSomar.Name = "RadBSomar";
+            this.RadBSomar.Size = new System.Drawing.Size(81, 24);
+            this.RadBSomar.TabIndex = 0;
+            this.RadBSomar.TabStop = true;
+            this.RadBSomar.Text = "Somar";
+            this.RadBSomar.UseVisualStyleBackColor = true;
+            this.RadBSomar.CheckedChanged += new System.EventHandler(this.RadBSomar_CheckedChanged);
             // 
-            // parimpar
+            // txtBox1
             // 
-            this.parimpar.AutoSize = true;
-            this.parimpar.Location = new System.Drawing.Point(60, 250);
-            this.parimpar.Name = "parimpar";
-            this.parimpar.Size = new System.Drawing.Size(70, 17);
-            this.parimpar.TabIndex = 5;
-            this.parimpar.TabStop = true;
-            this.parimpar.Text = "Par Impar";
-            this.parimpar.UseVisualStyleBackColor = true;
-            this.parimpar.CheckedChanged += new System.EventHandler(this.radioButton6_CheckedChanged);
+            this.txtBox1.Location = new System.Drawing.Point(354, 31);
+            this.txtBox1.Name = "txtBox1";
+            this.txtBox1.Size = new System.Drawing.Size(151, 26);
+            this.txtBox1.TabIndex = 1;
+            // 
+            // txtBox2
+            // 
+            this.txtBox2.Location = new System.Drawing.Point(354, 74);
+            this.txtBox2.Name = "txtBox2";
+            this.txtBox2.Size = new System.Drawing.Size(151, 26);
+            this.txtBox2.TabIndex = 2;
+            // 
+            // lbl_alg
+            // 
+            this.lbl_alg.AutoSize = true;
+            this.lbl_alg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_alg.Location = new System.Drawing.Point(318, 77);
+            this.lbl_alg.Name = "lbl_alg";
+            this.lbl_alg.Size = new System.Drawing.Size(20, 22);
+            this.lbl_alg.TabIndex = 3;
+            this.lbl_alg.Text = "?";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(209, 217);
+            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label1.Location = new System.Drawing.Point(356, 103);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "-------------------------------";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.Size = new System.Drawing.Size(153, 20);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "________________";
             // 
-            // resultado
+            // lbl_res
             // 
-            this.resultado.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.resultado.AutoSize = true;
-            this.resultado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.resultado.Cursor = System.Windows.Forms.Cursors.Default;
-            this.resultado.Location = new System.Drawing.Point(234, 250);
-            this.resultado.MaximumSize = new System.Drawing.Size(50, 50);
-            this.resultado.MinimumSize = new System.Drawing.Size(50, 50);
-            this.resultado.Name = "resultado";
-            this.resultado.Size = new System.Drawing.Size(50, 50);
-            this.resultado.TabIndex = 9;
-            this.resultado.Text = "?";
-            this.resultado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.resultado.Click += new System.EventHandler(this.label2_Click);
+            this.lbl_res.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_res.Location = new System.Drawing.Point(360, 131);
+            this.lbl_res.Name = "lbl_res";
+            this.lbl_res.Size = new System.Drawing.Size(145, 28);
+            this.lbl_res.TabIndex = 5;
+            this.lbl_res.Text = "?";
+            this.lbl_res.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnCalcular
+            // 
+            this.btnCalcular.Location = new System.Drawing.Point(293, 195);
+            this.btnCalcular.Name = "btnCalcular";
+            this.btnCalcular.Size = new System.Drawing.Size(94, 34);
+            this.btnCalcular.TabIndex = 6;
+            this.btnCalcular.Text = "Calcular";
+            this.btnCalcular.UseVisualStyleBackColor = true;
+            this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
+            // 
+            // btnLimpar
+            // 
+            this.btnLimpar.Location = new System.Drawing.Point(393, 195);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(94, 34);
+            this.btnLimpar.TabIndex = 7;
+            this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(300, 340);
+            this.button2.Location = new System.Drawing.Point(493, 195);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(104, 45);
-            this.button2.TabIndex = 11;
+            this.button2.Size = new System.Drawing.Size(94, 34);
+            this.button2.TabIndex = 8;
             this.button2.Text = "Fechar";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // calcular
-            // 
-            this.calcular.Location = new System.Drawing.Point(180, 340);
-            this.calcular.Name = "calcular";
-            this.calcular.Size = new System.Drawing.Size(104, 45);
-            this.calcular.TabIndex = 12;
-            this.calcular.Text = "Calcular";
-            this.calcular.UseVisualStyleBackColor = true;
-            this.calcular.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(50, 340);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(104, 45);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Limpar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(212, 125);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 16;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(212, 177);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 17;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged_1);
-            // 
             // CalcRadio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(467, 450);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.calcular);
+            this.ClientSize = new System.Drawing.Size(603, 272);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.resultado);
+            this.Controls.Add(this.btnLimpar);
+            this.Controls.Add(this.btnCalcular);
+            this.Controls.Add(this.lbl_res);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.parimpar);
-            this.Controls.Add(this.comp);
-            this.Controls.Add(this.mult);
-            this.Controls.Add(this.div);
-            this.Controls.Add(this.sub);
-            this.Controls.Add(this.soma);
+            this.Controls.Add(this.lbl_alg);
+            this.Controls.Add(this.txtBox2);
+            this.Controls.Add(this.txtBox1);
+            this.Controls.Add(this.groupBox1);
             this.Name = "CalcRadio";
             this.Text = "CalcRadio";
             this.Load += new System.EventHandler(this.CalcRadio_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -217,18 +207,18 @@
 
         #endregion
 
-        private System.Windows.Forms.RadioButton soma;
-        private System.Windows.Forms.RadioButton sub;
-        private System.Windows.Forms.RadioButton div;
-        private System.Windows.Forms.RadioButton mult;
-        private System.Windows.Forms.RadioButton comp;
-        private System.Windows.Forms.RadioButton parimpar;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton RadBSomar;
+        private System.Windows.Forms.RadioButton RadBSubtrair;
+        private System.Windows.Forms.RadioButton RadBMultiplicar;
+        private System.Windows.Forms.RadioButton RadBDividir;
+        private System.Windows.Forms.TextBox txtBox1;
+        private System.Windows.Forms.TextBox txtBox2;
+        private System.Windows.Forms.Label lbl_alg;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label resultado;
+        private System.Windows.Forms.Label lbl_res;
+        private System.Windows.Forms.Button btnCalcular;
+        private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button calcular;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
     }
 }

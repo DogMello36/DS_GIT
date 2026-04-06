@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Menu_Calculos
+namespace Github_csharp.Formulários
 {
     public partial class CalcRadio : Form
     {
@@ -17,139 +17,80 @@ namespace Menu_Calculos
             InitializeComponent();
         }
 
-        private void radioButton5_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton3_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton6_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void CalcRadio_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        //BOTÃO DE FECHAMENTO
+        private void button2_Click(object sender, EventArgs e)
         {
-            
+            Close();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void btnLimpar_Click(object sender, EventArgs e)
         {
-            double a, b;
-
-            a = double.Parse(textBox1.Text);
-            b = double.Parse(textBox2.Text);
-
-            textBox1.Clear();
-            textBox2.Clear();
+            txtBox1.Text = "";
+            txtBox2.Text = "";
+            lbl_res.Text = "";
         }
 
-        private void textBox2_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            double a, b;
-            double c;
-
-            a = int.Parse(textBox1.Text);
-            b = int.Parse(textBox2.Text);
-            c = a + b;
-
-
-            // validação
-            if (!double.TryParse(textBox1.Text, out a) ||
-                !double.TryParse(textBox2.Text, out b))
-            {
-                MessageBox.Show("Digite números válidos!");
-                return;
-            }
-
-            string resultadoFinal = "";
-
-            // operações matemáticas
-            if (soma.Checked)
-                resultadoFinal = (a + b).ToString();
-
-            else if (sub.Checked)
-                resultadoFinal = (a - b).ToString();
-
-            else if (div.Checked)
-                resultadoFinal = (a / b).ToString();
-
-            else if (mult.Checked)
-                resultadoFinal = (a * b).ToString();
-
-            // comparar
-            else if (comp.Checked)
-            {
-                if (a > b)
-                    resultadoFinal = a + " > " + b;
-                else if (a < b)
-                    resultadoFinal = a + " < " + b;
-                else
-                    resultadoFinal = a + " = " + b;
-            }
-
-            // par ou ímpar (usa só o primeiro número)
-            else if (parimpar.Checked)
-                c = a + b;
-            {
-                if (c % 2 == 0)
-                    resultadoFinal = "A soma dos dois é Par";
-                else
-                    resultadoFinal = "A soma dos dois é Ímpar";
-            }
-
-            resultado.Text = resultadoFinal.ToString();
-        }
         private void btnCalcular_Click(object sender, EventArgs e)
         {
-           
+            decimal a, b;
+            try
+            {
+                a = decimal.Parse(txtBox1.Text);
+                b = decimal.Parse(txtBox2.Text);
+                if (RadBSomar.Checked)
+                { 
+                    lbl_res.Text = (a + b).ToString();
+
+                }
+                else if (RadBSubtrair.Checked)
+                {
+                    lbl_res.Text = (a - b).ToString();
+                }
+                else if (RadBMultiplicar.Checked)
+                {
+                    lbl_res.Text = (a * b).ToString();
+                }
+                else if (RadBDividir.Checked)
+                {
+                    lbl_res.Text = (a / b).ToString();
+                }
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Informe apenas números");
+            }
+            catch (DivideByZeroException)
+            {
+                MessageBox.Show("Impossível divisão por zero");
+            }
         }
 
-        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        private void RadBSomar_CheckedChanged(object sender, EventArgs e)
+        {
+            lbl_alg.Text = "+";
+        }
+
+        private void RadBSubtrair_CheckedChanged(object sender, EventArgs e)
+        {
+            lbl_alg.Text = "-";
+        }
+
+        private void RadBMultiplicar_CheckedChanged(object sender, EventArgs e)
+        {
+            lbl_alg.Text = "X";
+        }
+
+        private void RadBDividir_CheckedChanged(object sender, EventArgs e)
+        {
+            lbl_alg.Text = "÷";
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }

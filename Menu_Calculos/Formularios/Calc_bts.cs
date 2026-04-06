@@ -180,5 +180,23 @@ namespace Menu_Calculos
         {
 
         }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // bloqueia tudo que não for número
+            }
+        }
+
+
+
+            private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // bloqueia tudo que não for número
+            }
+        }
     }
 }
