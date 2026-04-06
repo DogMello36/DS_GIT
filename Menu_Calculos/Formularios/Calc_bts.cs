@@ -61,6 +61,8 @@ namespace Menu_Calculos
         {
             sinal.Text = "?";
             resultado.Text = "?";
+            textBox1.Clear();
+            textBox2.Clear();
             txt_min_n1.Clear();
             txt_min_n2.Clear();
             txt_min_n1.Focus();
