@@ -75,7 +75,7 @@ namespace Github_csharp.Formulários
                     case "-":
                         lblvisor.Text = (vNumant - Numatual).ToString();
                         break;
-                    case ":":
+                    case "/":
                         try
                         {
                             lblvisor.Text = (vNumant / Numatual).ToString();
