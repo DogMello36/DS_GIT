@@ -135,5 +135,10 @@ namespace Menu_Calculos.Formularios
         {
             OpenChildForm<CalcDeVdd>();
         }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            OpenChildForm<CalcDeVdd>();
+        }
     }
 }

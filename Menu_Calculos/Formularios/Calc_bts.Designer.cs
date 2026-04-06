@@ -85,7 +85,7 @@
             // btnnLimpar
             // 
             this.btnnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnnLimpar.Location = new System.Drawing.Point(206, 522);
+            this.btnnLimpar.Location = new System.Drawing.Point(206, 458);
             this.btnnLimpar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnnLimpar.Name = "btnnLimpar";
             this.btnnLimpar.Size = new System.Drawing.Size(112, 49);
@@ -97,7 +97,7 @@
             // btnFechar
             // 
             this.btnFechar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFechar.Location = new System.Drawing.Point(70, 522);
+            this.btnFechar.Location = new System.Drawing.Point(70, 458);
             this.btnFechar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(112, 49);
@@ -149,7 +149,7 @@
             // btnParImpar
             // 
             this.btnParImpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnParImpar.Location = new System.Drawing.Point(562, 446);
+            this.btnParImpar.Location = new System.Drawing.Point(342, 378);
             this.btnParImpar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnParImpar.Name = "btnParImpar";
             this.btnParImpar.Size = new System.Drawing.Size(166, 49);
@@ -161,7 +161,7 @@
             // btnComparar
             // 
             this.btnComparar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnComparar.Location = new System.Drawing.Point(562, 372);
+            this.btnComparar.Location = new System.Drawing.Point(342, 319);
             this.btnComparar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnComparar.Name = "btnComparar";
             this.btnComparar.Size = new System.Drawing.Size(166, 49);
@@ -173,7 +173,7 @@
             // btnDividir
             // 
             this.btnDividir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDividir.Location = new System.Drawing.Point(562, 231);
+            this.btnDividir.Location = new System.Drawing.Point(342, 233);
             this.btnDividir.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDividir.Name = "btnDividir";
             this.btnDividir.Size = new System.Drawing.Size(166, 49);
@@ -185,7 +185,7 @@
             // btnMultiplicar
             // 
             this.btnMultiplicar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMultiplicar.Location = new System.Drawing.Point(562, 174);
+            this.btnMultiplicar.Location = new System.Drawing.Point(342, 174);
             this.btnMultiplicar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnMultiplicar.Name = "btnMultiplicar";
             this.btnMultiplicar.Size = new System.Drawing.Size(166, 49);
@@ -197,7 +197,7 @@
             // btnSubitrair
             // 
             this.btnSubitrair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubitrair.Location = new System.Drawing.Point(562, 112);
+            this.btnSubitrair.Location = new System.Drawing.Point(342, 118);
             this.btnSubitrair.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSubitrair.Name = "btnSubitrair";
             this.btnSubitrair.Size = new System.Drawing.Size(166, 49);
@@ -209,7 +209,7 @@
             // btnSomar
             // 
             this.btnSomar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSomar.Location = new System.Drawing.Point(562, 49);
+            this.btnSomar.Location = new System.Drawing.Point(342, 59);
             this.btnSomar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSomar.Name = "btnSomar";
             this.btnSomar.Size = new System.Drawing.Size(166, 49);
@@ -223,7 +223,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(802, 585);
+            this.ClientSize = new System.Drawing.Size(542, 529);
             this.Controls.Add(this.btnParImpar);
             this.Controls.Add(this.btnComparar);
             this.Controls.Add(this.btnDividir);
