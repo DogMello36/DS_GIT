@@ -1,8 +1,10 @@
-﻿using Github_csharp.Formulários;
+﻿using Github_csharp;
+using Github_csharp.Formulários;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -35,7 +37,7 @@ namespace Menu_Calculos.Formularios
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            OpenChildForm<CALCULOS>(); // ChildForm é o tipo do formulário filho
+            OpenChildForm<Calc_bts>(); // ChildForm é o tipo do formulário filho
         }
         private void OpenChildForm<T>() where T : Form, new()
         {
@@ -59,7 +61,7 @@ namespace Menu_Calculos.Formularios
         }
         private void comBotõesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenChildForm<CALCULOS>(); // ChildForm é o tipo do formulário filho
+            OpenChildForm<Calc_bts>(); // ChildForm é o tipo do formulário filho
         }
 
         private void MDI_Menu_FormClosing(object sender, FormClosingEventArgs e)
@@ -139,6 +141,41 @@ namespace Menu_Calculos.Formularios
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
             OpenChildForm<CalcDeVdd>();
+        }
+
+        private void blocoDeNotasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start("notepad.exe");
+        }
+
+        private void sobreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = "https://github.com/gustavnerisfx/Solu-o_Calculos_DS/blob/master/README.md",
+                UseShellExecute = true
+            });
+        }
+
+        private void calculadoraWindownsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start("Calc.exe");
+        }
+
+        private void nAvegadorWebToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = "https://duckduckgo.com/",
+                UseShellExecute = true
+            });
+        }
+
+        private void desenvolvedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string message = "Matheus Henrique Fernandes Mello, Luiz Felipe Silva Oliveira";
+            string title = "Desenvolvedores";
+            MessageBox.Show(message, title);
         }
     }
 }

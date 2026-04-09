@@ -4,24 +4,24 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Menu_Calculos
+namespace Github_csharp
 {
-    public partial class CALCULOS : Form
+    public partial class Calc_bts : Form
     {
-        private object lbl;
-
-        public CALCULOS()
+        // utilidades
+        public bool Par(int num)
+        {
+            return (num % 2 == 0);
+        }
+        // código mesmo
+        public Calc_bts()
         {
             InitializeComponent();
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -29,176 +29,175 @@ namespace Menu_Calculos
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
+            lbl_alg.Text = "+";
+            decimal a, b;
+
+            try
+            {
+                a = decimal.Parse(txtBox1.Text);
+                b = decimal.Parse(txtBox2.Text);
+                lbl_res.Text = (a + b).ToString();
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Informe apenas números");
+            }
+        }
+
+        private void btn_limpar_Click(object sender, EventArgs e)
+        {
+            txtBox1.Text = "";
+            txtBox2.Text = "";
+            lbl_res.Text = "";
+            lbl_alg.Text = "";
 
         }
 
-        private void btnFechar_Click(object sender, EventArgs e)
+        private void btn_sub_Click(object sender, EventArgs e)
+        {
+            lbl_alg.Text = "-";
+            decimal a, b;
+
+            try
+            {
+                a = decimal.Parse(txtBox1.Text);
+                b = decimal.Parse(txtBox2.Text);
+                lbl_res.Text = (a - b).ToString();
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Informe apenas números");
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            lbl_alg.Text = "X";
+            decimal a, b;
+
+            try
+            {
+                a = decimal.Parse(txtBox1.Text);
+                b = decimal.Parse(txtBox2.Text);
+                lbl_res.Text = (a * b).ToString();
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Informe apenas números");
+            }
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            lbl_alg.Text = "/";
+            decimal a, b;
+
+            try
+            {
+                a = decimal.Parse(txtBox1.Text);
+                b = decimal.Parse(txtBox2.Text);
+                lbl_res.Text = (a / b).ToString();
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Informe apenas números");
+            }
+            catch (DivideByZeroException)
+            {
+                MessageBox.Show("Impossível divisão por zero");
+            }
+
+        }
+
+        private void btn_fechar_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void btnSomar_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-            double a, b;
-
-            if (textBox1.Text == "" || textBox2.Text == "")
+            lbl_alg.Text = "/";
+            decimal a, b;
+            try
             {
-                resultado.Text = "Coloque um valor";
-            }
-            else
-            {
-                a = double.Parse(textBox1.Text);
-                b = double.Parse(textBox2.Text);
-
-                sinal.Text = "+";
-                resultado.Text = (a + b).ToString();
-            }
-        }
-
-        private void btnnLimpar_Click(object sender, EventArgs e)
-        {
-            sinal.Text = "?";
-            resultado.Text = "?";
-            textBox1.Clear();
-            textBox2.Clear();
-            txt_min_n1.Clear();
-            txt_min_n2.Clear();
-            txt_min_n1.Focus();
-        }
-
-        private void btnSubitrair_Click(object sender, EventArgs e)
-        {
-            double a, b;
-
-            if (textBox1.Text == "" || textBox2.Text == "")
-            {
-                resultado.Text = "Coloque um valor";
-            }
-            else
-            {
-                a = double.Parse(textBox1.Text);
-                b = double.Parse(textBox2.Text);
-
-                sinal.Text = "-";
-                resultado.Text = (a - b).ToString();
-            }
-        }
-
-        private void btnMultiplicar_Click(object sender, EventArgs e)
-        {
-            double a, b;
-
-            if (textBox1.Text == "" || textBox2.Text == "")
-            {
-                resultado.Text = "Coloque um valor";
-            }
-            else
-            {
-                a = double.Parse(textBox1.Text);
-                b = double.Parse(textBox2.Text);
-
-                sinal.Text = "*";
-                resultado.Text = (a * b).ToString();
-            }
-        }
-
-        private void btnDividir_Click(object sender, EventArgs e)
-        {
-            double a, b;
-
-            if (textBox1.Text == "" || textBox2.Text == "")
-            {
-                resultado.Text = "Coloque um valor";
-            }
-            else
-            {
-                a = double.Parse(textBox1.Text);
-                b = double.Parse(textBox2.Text);
-
-                sinal.Text = "/";
-                resultado.Text = (a / b).ToString();
-            }
-        }
-
-        private void btnComparar_Click(object sender, EventArgs e)
-        {
-            double a, b;
-
-            if (textBox1.Text == "" || textBox2.Text == "")
-            {
-                resultado.Text = "Coloque um valor";
-            }
-            else
-            {
-                a = double.Parse(textBox1.Text);
-                b = double.Parse(textBox2.Text);
-                if (a > b)
+                a = decimal.Parse(txtBox1.Text);
+                b = decimal.Parse(txtBox2.Text);
+                if (a != b)
                 {
-                    resultado.Text = a + " > " + b;
+                    if (a < b)
+                    {
+                        lbl_alg.Text = "<";
+                        lbl_res.Text = $"{b} é o maior";
+                    }
+                    else
+                    {
+                        lbl_alg.Text = ">";
+                        lbl_res.Text = $"{a} é o maior";
+                    }
                 }
                 else
                 {
-                    resultado.Text = b + " > " + a;
+                    lbl_alg.Text = "=";
+                    lbl_res.Text = "São iguais";
                 }
             }
-            
+            catch (FormatException)
+            {
+                MessageBox.Show("Informe apenas números");
+            }
         }
 
-        private void btnParImpar_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
-            double a, b;
-            double c;
-
-            if (textBox1.Text == "" || textBox2.Text == "")
+            lbl_alg.Text = "%";
+            lbl_res.Text = "";
+            decimal a, b;
+            try
             {
-                resultado.Text = "Coloque um valor";
-            }
-            else
-            {
-                a = int.Parse(textBox1.Text);
-                b = int.Parse(textBox2.Text);
-                c = a + b;
-
-                if (c % 2 == 0)
-                {
-                    resultado.Text = c + " é Par";
+                a = decimal.Parse(txtBox1.Text);
+                b = decimal.Parse(txtBox2.Text);
+                if (Par((int)a)) {
+                    lbl_res.Text = $"{a}: par";
                 }
                 else
                 {
-                    resultado.Text = c + " é Impar";
+                    lbl_res.Text = $"{a}: ímpar";
+                }
+                if (Par((int)b))
+                {
+                    lbl_res.Text += $"\n{b}: par";
+                }
+                else
+                {
+                    lbl_res.Text += $"\n{b}: ímpar";
                 }
             }
-
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void resultado_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            catch (FormatException)
             {
-                e.Handled = true; // bloqueia tudo que não for número
+                MessageBox.Show("Informe apenas números");
             }
         }
 
-
-
-            private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        private void lbl_res_Click(object sender, EventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true; // bloqueia tudo que não for número
-            }
+
+        }
+
+        private void txtBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
